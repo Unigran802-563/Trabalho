@@ -25,7 +25,7 @@ export default function Login() {
   return (
     <div className="container-login">
       <div className="form-box">
-        <h2>Login</h2>
+        <h2>Login <br/> Projeto Carrinho João</h2>
         <div className="input-group">
           <label>Nome</label>
           <input

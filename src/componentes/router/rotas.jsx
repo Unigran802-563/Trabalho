@@ -3,6 +3,7 @@ import Vitrine from '../../pages/produtos/Vitrine'
 import Login from '../../pages/login/login'
 import Cadastro from '../../pages/cadastro/cadastro'
 import PrivateRoute from './privateRouter'
+import Edição from '../../pages/ediçãoProdutos/ediação'
 export default function Rotas() {
   return (
     <Routes>
@@ -13,6 +14,14 @@ export default function Rotas() {
         element={
           <PrivateRoute>
             <Vitrine />
+          </PrivateRoute>
+        }
+      />
+      <Route
+        path="/edição"
+        element={
+          <PrivateRoute>
+            <Edição />
           </PrivateRoute>
         }
       />
