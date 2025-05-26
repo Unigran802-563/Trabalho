@@ -3,7 +3,7 @@ import Vitrine from '../../pages/produtos/Vitrine'
 import Login from '../../pages/login/login'
 import Cadastro from '../../pages/cadastro/cadastro'
 import PrivateRoute from './privateRouter'
-import Edição from '../../pages/ediçãoProdutos/ediação'
+import Edição from '../../pages/ediçãoProdutos/edição'
 export default function Rotas() {
   return (
     <Routes>

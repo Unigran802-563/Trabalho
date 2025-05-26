@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Sidebar from "../../componentes/sidebar/sideBar";
+import './edição.css'
 export default function Edicao() {
   const [products, setProducts] = useState([])
   const [form, setForm] = useState({ id: null, name: '', price: '', URL: '' })
@@ -58,7 +59,6 @@ export default function Edicao() {
   return (
     <div className="product-manager">
       <Sidebar />
-            <div style={{ marginLeft: '250px', width: '100%' }}></div>
       <h2>Gerenciar Produtos</h2>
 
       <form onSubmit={handleSubmit} className="product-form">
