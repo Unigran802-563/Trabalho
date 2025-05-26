@@ -1,12 +1,22 @@
-import { Routes, Route } from "react-router-dom";
-import Login from "../../pages/login/login"; // exemplo de página
-
-const Rotas = () => {
+import { Routes, Route, Navigate } from 'react-router-dom'
+import Vitrine from '../../pages/produtos/Vitrine'
+import Login from '../../pages/login/login'
+import Cadastro from '../../pages/cadastro/cadastro'
+import PrivateRoute from './privateRouter'
+export default function Rotas() {
   return (
     <Routes>
-      <Route path="*" element={<Login />} />
+      <Route path="/" element={<Login />} />
+      <Route path="/cadastro" element={<Cadastro />} />
+      <Route
+        path="/vitrine"
+        element={
+          <PrivateRoute>
+            <Vitrine />
+          </PrivateRoute>
+        }
+      />
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
-  );
-};
-
-export default Rotas;
+  )
+}

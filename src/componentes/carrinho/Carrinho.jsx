@@ -13,7 +13,11 @@ function Carrinho({ itens, removerProduto }) {
       </button>
 
       <div className={`barra-lateral ${aberto ? 'aberto' : ''}`}>
-        <h3>Seu Carrinho</h3>
+        <div className="topo-carrinho">
+          <h3>Seu Carrinho</h3>
+          <button className="fechar-carrinho" onClick={() => setAberto(false)}>✖</button>
+        </div>
+
         {itens.length === 0 ? (
           <p>Seu carrinho está vazio</p>
         ) : (

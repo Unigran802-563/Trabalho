@@ -1,32 +1,52 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import './login.css'
 
 export default function Login() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const [nome, setNome] = useState('')
+  const [senha, setSenha] = useState('')
 
+  function login() {
+  if (nome && senha) {
+    localStorage.setItem('auth', 'true')
+    localStorage.setItem('nomeUsuario', nome)  
+    navigate('/vitrine')
+  } else {
+    alert('Preencha os campos!')
+  }
+}
+
+
+  function Cadastrar() {
+    navigate('/cadastro')
+  }
+  
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded shadow-md w-full max-w-sm">
-        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
-        <input
-          type="text"
-          placeholder="Usuário"
-          className="w-full p-2 mb-4 border rounded"
-        />
-        <input
-          type="password"
-          placeholder="Senha"
-          className="w-full p-2 mb-4 border rounded"
-        />
-        <button className="w-full bg-blue-500 text-white py-2 rounded mb-2 hover:bg-blue-600">
-          Entrar
-        </button>
-        <button
-          onClick={() => navigate("/cadastro")}
-          className="w-full border border-blue-500 text-blue-500 py-2 rounded hover:bg-blue-50"
-        >
-          Cadastrar
-        </button>
+    <div className="container-login">
+      <div className="form-box">
+        <h2>Login</h2>
+        <div className="input-group">
+          <label>Nome</label>
+          <input
+            type="text"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+          />
+        </div>
+        <div className="input-group">
+          <label>Senha</label>
+          <input
+            type="password"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+          />
+        </div>
+        <div className="button-group">
+          <button className="botao-login" onClick={login}>Entrar</button>
+          <button className="botao-cadastro" onClick={Cadastrar}>Cadastrar</button>
+        </div>
       </div>
     </div>
-  );
+  )
 }

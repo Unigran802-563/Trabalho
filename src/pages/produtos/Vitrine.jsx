@@ -2,7 +2,7 @@ import { useState } from "react";
 import produtos from "./Produto";
 import Carrinho from '../../componentes/carrinho/Carrinho';
 import './Vitrine.css';
-
+import Sidebar from "../../componentes/sidebar/sideBar";
 function Vitrine() {
   const [carrinho, setCarrinho] = useState([]);
 
@@ -17,19 +17,22 @@ function Vitrine() {
   };
 
   return (
-    <div>
-      <Carrinho itens={carrinho} removerProduto={removerProduto} />
-      <div className="vitrine">
-        {produtos.map((produto, index) => (
-          <div className="card" key={index}>
-            <img src={produto.imagem} alt={produto.nome} />
-            <h3>{produto.nome}</h3>
-            <p>R$ {produto.valor.toFixed(2)}</p>
-            <div className="button-group">
-              <button onClick={() => addProduto(produto)}>Comprar</button>
+    <div style={{ display: 'flex'}}>
+      <Sidebar />
+      <div style={{ marginLeft: '250px', width: '100%' }}>
+        <Carrinho itens={carrinho} removerProduto={removerProduto} />
+        <div className="vitrine">
+          {produtos.map((produto, index) => (
+            <div className="card" key={index}>
+              <img src={produto.imagem} alt={produto.nome} />
+              <h3>{produto.nome}</h3>
+              <p>R$ {produto.valor.toFixed(2)}</p>
+              <div className="button-group">
+                <button onClick={() => addProduto(produto)}>Comprar</button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

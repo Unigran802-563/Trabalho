@@ -1,12 +1,12 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import Rotas from './componentes/router/rotas'
 
-import Vitrine from './pages/produtos/Vitrine'
-import Login from "./pages/login/login.jsx"
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-  
-   <Login></Login>
-  </StrictMode>,
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Rotas />
+    </BrowserRouter>
+  </React.StrictMode>
 )

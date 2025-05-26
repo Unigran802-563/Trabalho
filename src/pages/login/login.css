@@ -1,0 +1,75 @@
+.container-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #000000, #111827, #1f2937);
+}
+
+.form-box {
+  background: #1f2937;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  width: 100%;
+  max-width: 400px;
+  color: #fbbf24;
+  border: 1px solid #374151;
+}
+
+.form-box h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #fbbf24;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #e5e7eb;
+}
+
+.input-group input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  background-color: #111827;
+  color: #fbbf24;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #fbbf24;
+  outline: none;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.botao-login, .botao-cadastro {
+  flex: 1;
+  background: linear-gradient(to right, #fbbf24, #facc15);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 9999px;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.botao-login:hover, .botao-cadastro:hover {
+  background: linear-gradient(to right, #f59e0b, #fcd34d);
+  transform: scale(1.05);
+}

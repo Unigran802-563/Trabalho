@@ -1,37 +1,51 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import './cadastro.css'
 
 export default function Cadastro() {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const [nome, setNome] = useState('')
+  const [senha, setSenha] = useState('')
+
+  function Cadatro() {
+  if (nome && senha) {
+    localStorage.setItem('auth', 'true')
+    localStorage.setItem('nomeUsuario', nome) 
+    navigate('/vitrine')
+  } else {
+    alert('Preencha os campos!')
+  }
+}
+
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded shadow-md w-full max-w-sm">
-        <h2 className="text-2xl font-bold mb-6 text-center">Cadastro</h2>
-        <input
-          type="text"
-          placeholder="Nome"
-          className="w-full p-2 mb-4 border rounded"
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          className="w-full p-2 mb-4 border rounded"
-        />
-        <input
-          type="password"
-          placeholder="Senha"
-          className="w-full p-2 mb-4 border rounded"
-        />
-        <button className="w-full bg-green-500 text-white py-2 rounded mb-2 hover:bg-green-600">
-          Criar Conta
-        </button>
-        <button
-          onClick={() => navigate("/")}
-          className="w-full border border-green-500 text-green-500 py-2 rounded hover:bg-green-50"
-        >
-          Voltar para Login
-        </button>
+    <div className="container-cadastro">
+      <div className="form-box">
+        <h2>Cadastro</h2>
+        <div className="input-group">
+          <label>Nome</label>
+          <input
+            type="text"
+            placeholder="Nome"
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+          />
+        </div>
+        <div className="input-group">
+          <label>Senha</label>
+          <input
+            type="password"
+            placeholder="Senha"
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+          />
+        </div>
+        <div className="button-group">
+          <button className="botao-cadastro" onClick={Cadatro}>
+            Cadastrar
+          </button>
+        </div>
       </div>
     </div>
-  );
+  )
 }
