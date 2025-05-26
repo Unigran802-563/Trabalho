@@ -1,12 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
-import Vitrine from './componentes/Vitrine.jsx'
-
+import Vitrine from './pages/produtos/Vitrine'
+import Login from "./pages/login/login.jsx"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <Vitrine></Vitrine>
-   
+  
+   <Login></Login>
   </StrictMode>,
 )
