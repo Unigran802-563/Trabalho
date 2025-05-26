@@ -3,6 +3,7 @@ import produtos from "./Produto";
 import Carrinho from '../../componentes/carrinho/Carrinho';
 import './Vitrine.css';
 import Sidebar from "../../componentes/sidebar/sideBar";
+
 function Vitrine() {
   const [carrinho, setCarrinho] = useState([]);
 

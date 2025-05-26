@@ -1,7 +1,7 @@
 import './Sidebar.css'
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import perfil from '../../assets/do-utilizador.png'
+import perfil from '../../assets/perfil.png'
 
 export default function Sidebar() {
   const navigate = useNavigate()
