@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './Carrinho.css';
-import carrinho from "../../assets/carrinho.png";
+import carrinhoIcone from "../../assets/carrinho.png";
+
 function Carrinho({ itens, removerProduto }) {
   const [aberto, setAberto] = useState(false);
 
@@ -9,7 +10,8 @@ function Carrinho({ itens, removerProduto }) {
   return (
     <>
       <button className="botao-carrinho" onClick={() => setAberto(!aberto)}>
-      <img src={carrinho}/>{itens.length}
+        <img src={carrinhoIcone} alt="Carrinho" />
+        {itens.length}
       </button>
 
       <div className={`barra-lateral ${aberto ? 'aberto' : ''}`}>

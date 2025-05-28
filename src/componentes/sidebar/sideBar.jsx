@@ -30,7 +30,7 @@ export default function Sidebar() {
       <div className="buttons">
         <button onClick={logoff} className="sidebar-button">Logoff</button>
         <button onClick={() => navigate('/Vitrine')} className="sidebar-button">Vitrine</button>
-        <button onClick={() => navigate('/Edição')} className="sidebar-button">Editar Produtos</button>
+        <button onClick={() => navigate('/Edição')} className="sidebar-button">Gerenciar Produtos</button>
       </div>
     </div>
   )

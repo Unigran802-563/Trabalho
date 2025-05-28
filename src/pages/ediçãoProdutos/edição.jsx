@@ -60,7 +60,7 @@ export default function Edicao() {
     <div className="product-manager">
       <Sidebar />
       <h2>Gerenciar Produtos</h2>
-
+      <h3>Cadastro</h3>
       <form onSubmit={handleSubmit} className="product-form">
         <input
           name="name"
@@ -87,18 +87,29 @@ export default function Edicao() {
         <button type="submit">{isEditing ? 'Atualizar' : 'Adicionar'}</button>
       </form>
 
-      <ul className="product-list">
+      <div className="product-list">
         {products.map(product => (
-          <li key={product.id}>
-            <img src={product.URL} alt={product.name} style={{ width: '100px', height: 'auto' }} />
-            <span>{product.name} - R$ {product.price.toFixed(2)}</span>
-            <div className="actions">
+          <div className='card-product-list' key={product.id}>
+            <div>
+              <img src={product.URL} alt={product.name} style={{ width: '100px', height: 'auto' }} /><br />
+              <span>{product.name}</span><br />
+              <span><strong>R$ {product.price.toFixed(2)}</strong></span>
+            </div>
+            <div>
               <button onClick={() => Editar(product)}>Editar</button>
               <button onClick={() => handleDelete(product.id)}>Remover</button>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }
+
+
+
+
+
+
+
+
