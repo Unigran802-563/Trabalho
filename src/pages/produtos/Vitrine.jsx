@@ -34,15 +34,12 @@ function Vitrine() {
       <div style={{ marginLeft: '250px', width: '100%' }}>
         <Carrinho itens={itensCarrinho} removerProduto={removerDoCarrinho} />
         <div className="vitrine">
-          <div>
-            <div className="titulo">
-              <h2>Vitrine</h2>
-            </div>
+          <div className="lista">
             {listaProdutos.length === 0 ? (
               <div >
                 <h2>Nenhum produto cadastrado ainda.</h2>
                 <div>
-                  <button onClick={() => navigate('/Edição')} className="sidebar-button">Cadastar Produtos</button>
+                  <button onClick={() => navigate('/Edição')} className="cadastro-button">Cadastar Produtos</button>
                 </div>
               </div>
             ) : (
@@ -58,6 +55,8 @@ function Vitrine() {
               ))
             )}
           </div>
+            
+  
         </div>
       </div>
     </div>
